@@ -1,0 +1,13 @@
+main: me.thecamzone.engine.Main
+name: MCRPG
+version: 0.0.1
+description: Provides gameplay mechanics for MCRPG.
+api-version: 1.19
+author: TheCamZone
+commands:
+  mcrpg:
+    description: Main command for MCRPG server.
+    aliases: rpg
+    permission: mcrpg.default
+    permission-message: "Unknown command. Type \"/help\" for help."
+    usage: /<command>
