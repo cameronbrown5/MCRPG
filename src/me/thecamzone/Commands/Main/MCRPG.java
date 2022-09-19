@@ -9,7 +9,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
 import org.bukkit.persistence.PersistentDataType;
 
+import dev.lone.itemsadder.api.CustomStack;
 import me.thecamzone.Engine.Main;
+import me.thecamzone.Utilities.CustomItems.ItemFactory;
 import net.md_5.bungee.api.ChatColor;
 
 public class MCRPG implements CommandExecutor {
@@ -29,9 +31,15 @@ public class MCRPG implements CommandExecutor {
 					sender.sendMessage(ChatColor.WHITE + "- " + ChatColor.GRAY + "/setwarp <location>");
 					sender.sendMessage(ChatColor.WHITE + "- " + ChatColor.GRAY + "/delwarp <location>");
 					sender.sendMessage(ChatColor.WHITE + "-----------------");
+					return true;
 				}
 				
-				if(args.length == 1) {
+				else if(args.length == 1) {
+					if(args[0].equalsIgnoreCase("rollitem")) {
+						sender.sendMessage(ChatColor.RED + "Incorrect syntax: /mcrpg rollitem <itemType>");
+						return true;
+					}
+					
 					if(args[0].equalsIgnoreCase("deleteGravestones")) {
 						int counter = 0;
 						
@@ -45,6 +53,22 @@ public class MCRPG implements CommandExecutor {
 						}
 						
 						Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Successfully removed " + counter + " gravestone(s)");
+						
+						return true;
+					}
+				}
+				
+				else if(args.length == 2) {
+					if(args[0].equalsIgnoreCase("rollitem")) {
+						CustomStack stack = CustomStack.getInstance(args[1]);
+						if(stack == null) {
+							sender.sendMessage(ChatColor.RED + "Could not find an item with the name of " + args[1]);
+							return true;
+						} 
+						
+						stack.getItemStack();
+						
+						return true;
 					}
 				}
 				
