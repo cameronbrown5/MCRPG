@@ -7,6 +7,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataType;
 
 import dev.lone.itemsadder.api.CustomStack;
@@ -27,6 +29,7 @@ public class MCRPG implements CommandExecutor {
 					sender.sendMessage(ChatColor.GRAY + "Commands:");
 					sender.sendMessage(ChatColor.WHITE + "- " + ChatColor.GRAY + "/mcrpg");
 					sender.sendMessage(ChatColor.WHITE + "- " + ChatColor.GRAY + "/mcrpg deleteGravestones");
+					sender.sendMessage(ChatColor.WHITE + "- " + ChatColor.GRAY + "/mcrpg rollItem");
 					sender.sendMessage(ChatColor.WHITE + "- " + ChatColor.GRAY + "/warp [location]");
 					sender.sendMessage(ChatColor.WHITE + "- " + ChatColor.GRAY + "/setwarp <location>");
 					sender.sendMessage(ChatColor.WHITE + "- " + ChatColor.GRAY + "/delwarp <location>");
@@ -60,13 +63,27 @@ public class MCRPG implements CommandExecutor {
 				
 				else if(args.length == 2) {
 					if(args[0].equalsIgnoreCase("rollitem")) {
+						if(!(sender instanceof Player)) {
+							sender.sendMessage(ChatColor.RED + "You must be console to run this command.");
+						}
+						Player player = (Player) sender;
+						
 						CustomStack stack = CustomStack.getInstance(args[1]);
 						if(stack == null) {
 							sender.sendMessage(ChatColor.RED + "Could not find an item with the name of " + args[1]);
 							return true;
 						} 
 						
-						stack.getItemStack();
+						String[] splitNamespace = args[1].split(":");
+						String[] splitId = splitNamespace[1].split("_");
+						
+						ItemStack item = ItemFactory.rollItem(splitId[1], stack);
+						
+						if(item == null) {
+							sender.sendMessage(ChatColor.RED + "Item is not an upgradable item");
+						}
+						
+						player.getInventory().addItem(item);
 						
 						return true;
 					}

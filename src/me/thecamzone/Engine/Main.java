@@ -12,6 +12,7 @@ import me.thecamzone.Events.OnBlockPlace;
 import me.thecamzone.Events.OnPlayerInteract;
 import me.thecamzone.Events.OnPlayerInteractEntity;
 import me.thecamzone.Events.OnPlayerJoin;
+import me.thecamzone.Utilities.CustomItems.ItemFactory;
 import me.thecamzone.Utilities.Files.WarpsFile;
 import me.thecamzone.Warps.Warps;
 
@@ -28,6 +29,8 @@ public class Main extends JavaPlugin {
 		registerCommands();
 		registerEvents();
 	
+		ItemFactory.setup();
+		
 		load();
 	}
 	
