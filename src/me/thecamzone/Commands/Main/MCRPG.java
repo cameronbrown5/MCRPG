@@ -1,9 +1,15 @@
 package me.thecamzone.Commands.Main;
 
+import org.bukkit.Bukkit;
+import org.bukkit.NamespacedKey;
+import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Entity;
+import org.bukkit.persistence.PersistentDataType;
 
+import me.thecamzone.Engine.Main;
 import net.md_5.bungee.api.ChatColor;
 
 public class MCRPG implements CommandExecutor {
@@ -11,15 +17,37 @@ public class MCRPG implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if(command.getName().equalsIgnoreCase("mcrpg")) {
+			
 			if(sender.hasPermission("MCRPG.Admin")) {
-				sender.sendMessage(ChatColor.WHITE + "-----------------");
-				sender.sendMessage(ChatColor.GREEN + "MCRPG | Created by TheCamZone");
-				sender.sendMessage(ChatColor.GRAY + "Commands:");
-				sender.sendMessage(ChatColor.WHITE + "- " + ChatColor.GRAY + "/mcrpg");
-				sender.sendMessage(ChatColor.WHITE + "- " + ChatColor.GRAY + "/warp [location]");
-				sender.sendMessage(ChatColor.WHITE + "- " + ChatColor.GRAY + "/setwarp <location>");
-				sender.sendMessage(ChatColor.WHITE + "- " + ChatColor.GRAY + "/delwarp <location>");
-				sender.sendMessage(ChatColor.WHITE + "-----------------");
+				if(args.length == 0) {
+					sender.sendMessage(ChatColor.WHITE + "-----------------");
+					sender.sendMessage(ChatColor.GREEN + "MCRPG | Created by TheCamZone");
+					sender.sendMessage(ChatColor.GRAY + "Commands:");
+					sender.sendMessage(ChatColor.WHITE + "- " + ChatColor.GRAY + "/mcrpg");
+					sender.sendMessage(ChatColor.WHITE + "- " + ChatColor.GRAY + "/mcrpg deleteGravestones");
+					sender.sendMessage(ChatColor.WHITE + "- " + ChatColor.GRAY + "/warp [location]");
+					sender.sendMessage(ChatColor.WHITE + "- " + ChatColor.GRAY + "/setwarp <location>");
+					sender.sendMessage(ChatColor.WHITE + "- " + ChatColor.GRAY + "/delwarp <location>");
+					sender.sendMessage(ChatColor.WHITE + "-----------------");
+				}
+				
+				if(args.length == 1) {
+					if(args[0].equalsIgnoreCase("deleteGravestones")) {
+						int counter = 0;
+						
+						for(World world : Bukkit.getWorlds()) {
+							for(Entity entity : world.getEntities()) {
+								if(entity.getPersistentDataContainer().has(new NamespacedKey(Main.plugin, "mcrpg.gravestone"), PersistentDataType.STRING)) {
+									entity.remove();
+									counter++;
+								}
+							}
+						}
+						
+						Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Successfully removed " + counter + " gravestone(s)");
+					}
+				}
+				
 			}
 		}
 		

@@ -11,6 +11,12 @@ commands:
     permission: mcrpg.admin
     permission-message: "Unknown command. Type \"/help\" for help."
     usage: /<command>
+  hat:
+    description: Opens the hat menu
+    aliases: []
+    permission: mcrpg.hat
+    permission-message: "Unknown command. Type \"/help\" for help."
+    usage: /<command>
   setwarp:
     description: Sets warp at location where run.
     aliases: []
