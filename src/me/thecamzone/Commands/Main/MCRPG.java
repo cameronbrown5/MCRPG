@@ -1,6 +1,7 @@
 package me.thecamzone.Commands.Main;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.World;
 import org.bukkit.command.Command;
@@ -64,23 +65,31 @@ public class MCRPG implements CommandExecutor {
 				else if(args.length == 2) {
 					if(args[0].equalsIgnoreCase("rollitem")) {
 						if(!(sender instanceof Player)) {
-							sender.sendMessage(ChatColor.RED + "You must be console to run this command.");
+							sender.sendMessage(ChatColor.RED + "You must be a player to run this command.");
 						}
 						Player player = (Player) sender;
 						
-						CustomStack stack = CustomStack.getInstance(args[1]);
-						if(stack == null) {
-							sender.sendMessage(ChatColor.RED + "Could not find an item with the name of " + args[1]);
-							return true;
-						} 
-						
 						String[] splitNamespace = args[1].split(":");
-						String[] splitId = splitNamespace[1].split("_");
+						String namespace = splitNamespace[0];
+						String type = splitNamespace[1];
 						
-						ItemStack item = ItemFactory.rollItem(splitId[1], stack);
+						ItemStack item;
+						
+						if(!namespace.equalsIgnoreCase("minecraft")) {
+							CustomStack stack = CustomStack.getInstance(args[1]);
+							if(stack == null) {
+								sender.sendMessage(ChatColor.RED + "Could not find an item with the name of " + args[1]);
+								return true;
+							} 
+							
+							item = ItemFactory.rollItem(stack.getItemStack(), args[1]);
+						} else {
+							item = ItemFactory.rollItem(new ItemStack(Material.valueOf(type.toUpperCase())), args[1]);
+						}
 						
 						if(item == null) {
 							sender.sendMessage(ChatColor.RED + "Item is not an upgradable item");
+							return true;
 						}
 						
 						player.getInventory().addItem(item);

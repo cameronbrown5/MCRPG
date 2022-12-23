@@ -4,6 +4,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
 
 import me.thecamzone.Commands.Main.MCRPG;
+import me.thecamzone.Commands.Main.MCRPGTC;
 import me.thecamzone.Commands.Warp.Delwarp;
 import me.thecamzone.Commands.Warp.Setwarp;
 import me.thecamzone.Commands.Warp.Warp;
@@ -45,6 +46,7 @@ public class Main extends JavaPlugin {
 		getCommand("setwarp").setExecutor(new Setwarp());
 		getCommand("delwarp").setExecutor(new Delwarp());
 		
+		getCommand("mcrpg").setTabCompleter(new MCRPGTC());
 		getCommand("warp").setTabCompleter(new WarpTC());
 		getCommand("delwarp").setTabCompleter(new WarpTC());
 	}
