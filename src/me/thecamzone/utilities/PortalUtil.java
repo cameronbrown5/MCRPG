@@ -18,25 +18,50 @@ public class PortalUtil {
 
     public static boolean isValidPortal(Block block, Block starting, Axis axis, Set<Block> alreadyFound, boolean isFirst) {
         if(alreadyFound == null) alreadyFound = new HashSet<>();
+        
         if(block.getLocation().equals(starting.getLocation()) && !isFirst) return true;
+
         final Set<Block> checked = alreadyFound;
+
         if(axis == Axis.X) {
-            final Block[] nearbyBlocks = Arrays.stream(new Block[]{block.getLocation().add(1,0,0).getBlock(), block.getLocation().add(1,1,0).getBlock(), block.getLocation().add(1,-1,0).getBlock(), block.getLocation().add(0,1,0).getBlock(), block.getLocation().add(0,-1,0).getBlock(), block.getLocation().add(-1,0,0).getBlock(), block.getLocation().add(-1,1,0).getBlock(), block.getLocation().add(-1,-1,0).getBlock()}).filter(b -> !checked.contains(b)).toArray(Block[]::new);
+            final Block[] nearbyBlocks = Arrays.stream(new Block[]{
+                    block.getLocation().add(1,0,0).getBlock(),
+                    block.getLocation().add(1,1,0).getBlock(),
+                    block.getLocation().add(1,-1,0).getBlock(),
+                    block.getLocation().add(0,1,0).getBlock(),
+                    block.getLocation().add(0,-1,0).getBlock(),
+                    block.getLocation().add(-1,0,0).getBlock(),
+                    block.getLocation().add(-1,1,0).getBlock(),
+                    block.getLocation().add(-1,-1,0).getBlock()
+            }).filter(b -> !checked.contains(b)).toArray(Block[]::new);
+
             for(Block nearbyBlock : nearbyBlocks) {
                 if(nearbyBlock.getType() == Material.OBSIDIAN && !alreadyFound.contains(nearbyBlock)) {
                     alreadyFound.add(nearbyBlock);
                     return isValidPortal(nearbyBlock, starting, axis, alreadyFound,false);
                 }
             }
+
             return false;
         } else if(axis == Axis.Z) {
-            final Block[] nearbyBlocks = Arrays.stream(new Block[]{block.getLocation().add(0,0,1).getBlock(), block.getLocation().add(0,1,1).getBlock(), block.getLocation().add(0,-1,1).getBlock(), block.getLocation().add(0,1,0).getBlock(), block.getLocation().add(0,-1,0).getBlock(), block.getLocation().add(0,0,-1).getBlock(), block.getLocation().add(0,1,-1).getBlock(), block.getLocation().add(0,-1,-1).getBlock()}).filter(b -> !checked.contains(b)).toArray(Block[]::new);
+            final Block[] nearbyBlocks = Arrays.stream(new Block[]{
+                    block.getLocation().add(0,0,1).getBlock(),
+                    block.getLocation().add(0,1,1).getBlock(),
+                    block.getLocation().add(0,-1,1).getBlock(),
+                    block.getLocation().add(0,1,0).getBlock(),
+                    block.getLocation().add(0,-1,0).getBlock(),
+                    block.getLocation().add(0,0,-1).getBlock(),
+                    block.getLocation().add(0,1,-1).getBlock(),
+                    block.getLocation().add(0,-1,-1).getBlock()
+            }).filter(b -> !checked.contains(b)).toArray(Block[]::new);
+
             for(Block nearbyBlock : nearbyBlocks) {
                 if(nearbyBlock.getType() == Material.OBSIDIAN && !alreadyFound.contains(nearbyBlock)) {
                     alreadyFound.add(nearbyBlock);
                     return isValidPortal(nearbyBlock, starting, axis, alreadyFound,false);
                 }
             }
+
             return false;
         } else throw new IllegalArgumentException("Axis cannot be Y");
     }
