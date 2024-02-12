@@ -171,6 +171,8 @@ world-settings:
     zombie-aggressive-towards-villager: true
     dragon-death-sound-radius: 0
     verbose: false
+  worldeditregentempworld:
+    verbose: false
 config-version: 12
 stats:
   disable-saving: false

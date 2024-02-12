@@ -1,5 +1,6 @@
 package me.thecamzone.utilities;
 
+import me.thecamzone.MCRPG;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
@@ -12,13 +13,14 @@ public class PortalUtil {
 
     private static final BlockFace[] axis = { BlockFace.NORTH, BlockFace.EAST, BlockFace.SOUTH, BlockFace.WEST };
 
+    // Someone else's complete jank to find cardinal direction
     public static BlockFace yawToFacing(float yaw) {
         return axis[Math.round(yaw / 90f) & 0x3].getOppositeFace();
     }
 
     public static boolean isValidPortal(Block block, Block starting, Axis axis, Set<Block> alreadyFound, boolean isFirst) {
         if(alreadyFound == null) alreadyFound = new HashSet<>();
-        
+
         if(block.getLocation().equals(starting.getLocation()) && !isFirst) return true;
 
         final Set<Block> checked = alreadyFound;
@@ -73,8 +75,13 @@ public class PortalUtil {
             return false;
         }
 
+        int iteration = 0;
         for(Block b : insideBlocks) {
-            b.setType(Material.LIME_WOOL);
+            iteration++;
+            Bukkit.getScheduler().scheduleSyncDelayedTask(MCRPG.plugin, () -> {
+                b.setType(Material.LIME_WOOL);
+            }, 10L * iteration);
+
         }
 
         return true;
@@ -98,6 +105,10 @@ public class PortalUtil {
                     block.getLocation().add(1,0,0).getBlock(),
                     block.getLocation().add(0,-1,0).getBlock(),
                     block.getLocation().add(0,1,0).getBlock(),
+//                    block.getLocation().add(-1,-1,0).getBlock(),
+//                    block.getLocation().add(1,1,0).getBlock(),
+//                    block.getLocation().add(1,-1,0).getBlock(),
+//                    block.getLocation().add(-1,1,0).getBlock(),
             }).filter(b -> !checked.contains(b)).toArray(Block[]::new);
         } else {
             nearbyBlocks = Arrays.stream(new Block[] {
@@ -105,6 +116,10 @@ public class PortalUtil {
                     block.getLocation().add(0,0,1).getBlock(),
                     block.getLocation().add(0,-1,0).getBlock(),
                     block.getLocation().add(0,1,0).getBlock(),
+//                    block.getLocation().add(0,-1,-1).getBlock(),
+//                    block.getLocation().add(0,1,1).getBlock(),
+//                    block.getLocation().add(0,-1,1).getBlock(),
+//                    block.getLocation().add(0,1,-1).getBlock(),
             }).filter(b -> !checked.contains(b)).toArray(Block[]::new);
         }
 
@@ -119,6 +134,42 @@ public class PortalUtil {
 
     }
 
+    /*
+    var firstBlock
+    var currentBlock
+    var blockchain
+    var nextBlock
+
+    blockchain(currentBlock) {
+        if(currentBlock == firstBlock) return;
+
+        if(topEdge(currentBlock)) {
+            nextBlock = nextBlockByEdge(currentBlock, true);
+            blockChain.append(nextBlock);
+        } else {
+            nextBlock = nextBlockByEdge(currentBlock, false);
+            blockChain.append(nextBlock);
+        }
+
+        blockchain(nextBlock);
+     }
+
+     nextBlockByEdge(Block currentBlock, boolean topEdge) {
+        if(topEdge)
+            if(nextBlock == XTop)
+                return nextBlock.XTop;
+            else if(nextBlock == digTop)
+                return;
+            else
+                return nextBlock.Y
+        else
+            if(nextBlock == XBottom)
+                return nextBlock.XTop
+            else
+                return nextBlock.inbetweenXYTop
+     }
+     */
+
     public static void testPortal(Player player, Block block) {
         boolean x = isValidPortal(block, block, Axis.X, new HashSet<>(), true);
         boolean z = isValidPortal(block, block, Axis.Z, new HashSet<>(), true);
@@ -127,7 +178,7 @@ public class PortalUtil {
         Axis axis = null;
 
         Bukkit.broadcastMessage(" ");
-        if(x && ! z) {
+        if(x && !z) {
             Bukkit.broadcastMessage("Valid X portal");
             axis = Axis.X;
         } else if(z && !x) {
