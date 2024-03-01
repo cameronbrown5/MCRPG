@@ -57,6 +57,7 @@ public class MCRPG extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new OnEntityRegainHealth(), this);
 		getServer().getPluginManager().registerEvents(new OnPrepareCraftItem(), this);
 		getServer().getPluginManager().registerEvents(new OnBlockIgnite(), this);
+		getServer().getPluginManager().registerEvents(new OnBlockBreak(), this);
 	}
 
 	private void loadFiles() {

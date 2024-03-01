@@ -1,214 +1,79 @@
-[13:01:20] [ServerMain/INFO]: Environment: Environment[accountsHost=https://api.mojang.com, sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[13:01:21] [ServerMain/INFO]: Loaded 1174 recipes
-[13:01:21] [ServerMain/INFO]: Loaded 1271 advancements
-[13:01:21] [Server thread/INFO]: Starting minecraft server version 1.20.2
-[13:01:21] [Server thread/INFO]: Loading properties
-[13:01:21] [Server thread/INFO]: This server is running Paper version git-Paper-318 (MC: 1.20.2) (Implementing API version 1.20.2-R0.1-SNAPSHOT) (Git: 9271ee7)
-[13:01:21] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[13:01:21] [Server thread/INFO]: Using 4 threads for Netty based IO
-[13:01:21] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[21:33:28] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[21:33:29] [ServerMain/INFO]: Loaded 1174 recipes
+[21:33:29] [ServerMain/INFO]: Loaded 1271 advancements
+[21:33:29] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[21:33:29] [Server thread/INFO]: Loading properties
+[21:33:29] [Server thread/INFO]: This server is running Paper version git-Paper-424 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 37df121)
+[21:33:30] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[21:33:30] [Server thread/INFO]: Using 4 threads for Netty based IO
+[21:33:30] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[13:01:21] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 8 worker threads, and gen parallelism of 8 threads
-[13:01:21] [Server thread/INFO]: Default game type: SURVIVAL
-[13:01:21] [Server thread/INFO]: Generating keypair
-[13:01:21] [Server thread/INFO]: Starting Minecraft server on *:25565
-[13:01:21] [Server thread/INFO]: Using default channel type
-[13:01:21] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[13:01:21] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[13:01:21] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0-beta-04+c28ebca
-[13:01:22] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@37fefc61]
-[13:01:22] [Server thread/INFO]: [MCRPG] Loading server plugin MCRPG v0.0.1
-[13:01:22] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[13:01:22] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0-beta-04+c28ebca
-[13:01:22] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[13:01:22] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[13:01:22] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R2.PaperweightAdapter as the Bukkit adapter
-[13:01:22] [Server thread/INFO]: Preparing level "world"
-[13:01:23] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[13:01:23] [Server thread/INFO]: Time elapsed: 110 ms
-[13:01:23] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[13:01:23] [Server thread/INFO]: Time elapsed: 18 ms
-[13:01:23] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[13:01:23] [Server thread/INFO]: Time elapsed: 9 ms
-[13:01:23] [Server thread/INFO]: [MCRPG] Enabling MCRPG v0.0.1
-[13:01:23] [Server thread/INFO]: [MCRPG] [ACF] Enabled Asynchronous Tab Completion Support!
-[13:01:23] [Server thread/INFO]: Running delayed init tasks
-[13:01:23] [Server thread/INFO]: [MCRPG] No warps to load.
-[13:01:23] [Server thread/INFO]: Done (2.197s)! For help, type "help"
-[13:01:23] [Server thread/INFO]: Timings Reset
-[13:01:27] [User Authenticator #0/INFO]: UUID of player TheCamZone is e45ae587-1c68-4472-b7e4-19ef204af253
-[13:01:28] [Server thread/INFO]: TheCamZone joined the game
-[13:01:28] [Server thread/INFO]: TheCamZone[/127.0.0.1:56977] logged in with entity id 170 at ([world]-512.7749054592524, 127.8983787473681, -186.82763756202763)
-[13:01:32] [Server thread/INFO]:  
-[13:01:32] [Server thread/INFO]: Both valid, chose X
-[13:04:19] [Server thread/INFO]: TheCamZone issued server command: /rl confirm
-[13:04:19] [Server thread/INFO]: TheCamZone: Please note that this command is not supported and may cause issues when using some plugins.
-[13:04:19] [Server thread/INFO]: TheCamZone: If you encounter any issues please use the /stop command to restart your server.
-[13:04:19] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[13:04:19] [Server thread/INFO]: Using 4 threads for Netty based IO
-[13:04:19] [Server thread/INFO]: [MCRPG] Disabling MCRPG v0.0.1
-[13:04:19] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0-beta-04+c28ebca
-[13:04:19] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[13:04:20] [Server thread/INFO]: Loaded 1174 recipes
-[13:04:20] [Server thread/INFO]: Loaded 1271 advancements
-[13:04:20] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0-beta-04+c28ebca
-[13:04:20] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@35e7547c]
-[13:04:20] [Server thread/INFO]: [MCRPG] Loading server plugin MCRPG v0.0.1
-[13:04:20] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[13:04:20] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0-beta-04+c28ebca
-[13:04:20] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[13:04:20] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[13:04:20] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
-[13:04:20] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R2.PaperweightAdapter as the Bukkit adapter
-[13:04:20] [Server thread/INFO]: [MCRPG] Enabling MCRPG v0.0.1
-[13:04:20] [Server thread/INFO]: [MCRPG] [ACF] Enabled Asynchronous Tab Completion Support!
-[13:04:20] [Server thread/INFO]: TheCamZone: Reload complete.
-[13:04:20] [Server thread/INFO]: Timings Reset
-[13:04:20] [Server thread/INFO]: [MCRPG] No warps to load.
-[13:04:22] [Server thread/INFO]:  
-[13:04:22] [Server thread/INFO]: Both valid, chose X
-[13:05:00] [Server thread/INFO]: TheCamZone issued server command: /rl confirm
-[13:05:00] [Server thread/INFO]: TheCamZone: Please note that this command is not supported and may cause issues when using some plugins.
-[13:05:00] [Server thread/INFO]: TheCamZone: If you encounter any issues please use the /stop command to restart your server.
-[13:05:00] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[13:05:00] [Server thread/INFO]: Using 4 threads for Netty based IO
-[13:05:00] [Server thread/INFO]: [MCRPG] Disabling MCRPG v0.0.1
-[13:05:00] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0-beta-04+c28ebca
-[13:05:00] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[13:05:00] [Server thread/INFO]: Loaded 1174 recipes
-[13:05:00] [Server thread/INFO]: Loaded 1271 advancements
-[13:05:01] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0-beta-04+c28ebca
-[13:05:01] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@691e3d02]
-[13:05:01] [Server thread/INFO]: [MCRPG] Loading server plugin MCRPG v0.0.1
-[13:05:01] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[13:05:01] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0-beta-04+c28ebca
-[13:05:01] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[13:05:01] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[13:05:01] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
-[13:05:01] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R2.PaperweightAdapter as the Bukkit adapter
-[13:05:01] [Server thread/INFO]: [MCRPG] Enabling MCRPG v0.0.1
-[13:05:01] [Server thread/INFO]: [MCRPG] [ACF] Enabled Asynchronous Tab Completion Support!
-[13:05:01] [Server thread/INFO]: TheCamZone: Reload complete.
-[13:05:01] [Server thread/INFO]: Timings Reset
-[13:05:01] [Server thread/INFO]: [MCRPG] No warps to load.
-[13:05:30] [Server thread/INFO]: TheCamZone issued server command: /rl confirm
-[13:05:30] [Server thread/INFO]: TheCamZone: Please note that this command is not supported and may cause issues when using some plugins.
-[13:05:30] [Server thread/INFO]: TheCamZone: If you encounter any issues please use the /stop command to restart your server.
-[13:05:30] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[13:05:30] [Server thread/INFO]: Using 4 threads for Netty based IO
-[13:05:30] [Server thread/INFO]: [MCRPG] Disabling MCRPG v0.0.1
-[13:05:30] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0-beta-04+c28ebca
-[13:05:30] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[13:05:30] [Server thread/INFO]: Loaded 1174 recipes
-[13:05:30] [Server thread/INFO]: Loaded 1271 advancements
-[13:05:30] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0-beta-04+c28ebca
-[13:05:31] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@40b6c3f]
-[13:05:31] [Server thread/INFO]: [MCRPG] Loading server plugin MCRPG v0.0.1
-[13:05:31] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[13:05:31] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0-beta-04+c28ebca
-[13:05:31] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[13:05:31] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[13:05:31] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
-[13:05:31] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R2.PaperweightAdapter as the Bukkit adapter
-[13:05:31] [Server thread/INFO]: [MCRPG] Enabling MCRPG v0.0.1
-[13:05:31] [Server thread/INFO]: [MCRPG] [ACF] Enabled Asynchronous Tab Completion Support!
-[13:05:31] [Server thread/INFO]: TheCamZone: Reload complete.
-[13:05:31] [Server thread/INFO]: Timings Reset
-[13:05:31] [Server thread/INFO]: [MCRPG] No warps to load.
-[13:05:32] [Server thread/INFO]:  
-[13:05:32] [Server thread/INFO]: Both valid, chose X
-[13:05:54] [Server thread/INFO]:  
-[13:05:54] [Server thread/INFO]: Valid Z portal
-[13:05:54] [Server thread/INFO]: Too big
-[13:06:04] [Server thread/INFO]:  
-[13:06:04] [Server thread/INFO]: Both valid, chose X
-[13:06:20] [Server thread/INFO]:  
-[13:06:20] [Server thread/INFO]: Valid X portal
-[13:06:48] [Server thread/INFO]:  
-[13:06:48] [Server thread/INFO]: Both valid, chose Z
-[13:18:30] [Server thread/INFO]:  
-[13:18:30] [Server thread/INFO]: Valid Z portal
-[13:19:03] [Server thread/INFO]: TheCamZone issued server command: /rl confirm
-[13:19:03] [Server thread/INFO]: TheCamZone: Please note that this command is not supported and may cause issues when using some plugins.
-[13:19:03] [Server thread/INFO]: TheCamZone: If you encounter any issues please use the /stop command to restart your server.
-[13:19:03] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[13:19:03] [Server thread/INFO]: Using 4 threads for Netty based IO
-[13:19:03] [Server thread/INFO]: [MCRPG] Disabling MCRPG v0.0.1
-[13:19:03] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0-beta-04+c28ebca
-[13:19:03] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[13:19:03] [Server thread/INFO]: Loaded 1174 recipes
-[13:19:03] [Server thread/INFO]: Loaded 1271 advancements
-[13:19:03] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0-beta-04+c28ebca
-[13:19:04] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@17ecddc2]
-[13:19:04] [Server thread/INFO]: [MCRPG] Loading server plugin MCRPG v0.0.1
-[13:19:04] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[13:19:04] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0-beta-04+c28ebca
-[13:19:04] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[13:19:04] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[13:19:04] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
-[13:19:04] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R2.PaperweightAdapter as the Bukkit adapter
-[13:19:04] [Server thread/INFO]: [MCRPG] Enabling MCRPG v0.0.1
-[13:19:04] [Server thread/INFO]: [MCRPG] [ACF] Enabled Asynchronous Tab Completion Support!
-[13:19:04] [Server thread/INFO]: TheCamZone: Reload complete.
-[13:19:04] [Server thread/INFO]: Timings Reset
-[13:19:04] [Server thread/INFO]: [MCRPG] No warps to load.
-[13:19:08] [Server thread/INFO]:  
-[13:19:08] [Server thread/INFO]: Valid Z portal
-[13:19:32] [Server thread/INFO]:  
-[13:19:32] [Server thread/INFO]: Valid X portal
-[13:20:36] [Server thread/INFO]:  
-[13:20:36] [Server thread/INFO]: Valid X portal
-[13:20:36] [Server thread/INFO]: Too big
-[13:20:45] [Server thread/INFO]:  
-[13:20:45] [Server thread/INFO]: Valid X portal
-[13:20:45] [Server thread/INFO]: Too big
-[13:20:50] [Server thread/INFO]:  
-[13:20:50] [Server thread/INFO]: Valid X portal
-[13:20:51] [Server thread/INFO]:  
-[13:20:51] [Server thread/INFO]: Valid X portal
-[13:20:52] [Server thread/INFO]:  
-[13:20:52] [Server thread/INFO]: Valid X portal
-[13:20:52] [Server thread/INFO]: Too big
-[13:21:28] [Server thread/INFO]:  
-[13:21:28] [Server thread/INFO]: Valid X portal
-[13:21:28] [Server thread/INFO]:  
-[13:21:28] [Server thread/INFO]: Valid X portal
-[13:21:28] [Server thread/INFO]:  
-[13:21:28] [Server thread/INFO]: Valid X portal
-[13:21:29] [Server thread/INFO]:  
-[13:21:29] [Server thread/INFO]: Valid X portal
-[13:21:30] [Server thread/INFO]:  
-[13:21:30] [Server thread/INFO]: Valid X portal
-[13:21:30] [Server thread/INFO]:  
-[13:21:30] [Server thread/INFO]: Valid X portal
-[13:27:01] [Server thread/INFO]: Stopping server
-[13:27:01] [Server thread/INFO]: [MCRPG] Disabling MCRPG v0.0.1
-[13:27:01] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0-beta-04+c28ebca
-[13:27:01] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[13:27:01] [Server thread/INFO]: Saving players
-[13:27:01] [Server thread/INFO]: TheCamZone lost connection: Server closed
-[13:27:01] [Server thread/INFO]: TheCamZone left the game
-[13:27:01] [Server thread/INFO]: Saving worlds
-[13:27:01] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[13:27:01] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
-[13:27:01] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
-[13:27:01] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
-[13:27:01] [Server thread/INFO]: [ChunkHolderManager] Saved 2 block chunks, 158 entity chunks, 0 poi chunks in world 'world' in 0.02s
-[13:27:01] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[13:27:01] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
-[13:27:01] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
-[13:27:01] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
-[13:27:01] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
-[13:27:01] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 63 entity chunks, 0 poi chunks in world 'world_nether' in 0.01s
-[13:27:01] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[13:27:01] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
-[13:27:01] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
-[13:27:01] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
-[13:27:01] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
-[13:27:01] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 10 entity chunks, 0 poi chunks in world 'world_the_end' in 0.00s
-[13:27:01] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[13:27:01] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[13:27:01] [Server thread/INFO]: Flushing Chunk IO
-[13:27:01] [Server thread/INFO]: Closing Thread Pool
-[13:27:01] [Server thread/INFO]: Closing Server
+[21:33:30] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 8 worker threads, and gen parallelism of 8 threads
+[21:33:30] [Server thread/INFO]: Default game type: SURVIVAL
+[21:33:30] [Server thread/INFO]: Generating keypair
+[21:33:30] [Server thread/INFO]: Starting Minecraft server on *:25565
+[21:33:30] [Server thread/INFO]: Using default channel type
+[21:33:30] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[21:33:30] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[21:33:30] [Server thread/INFO]: [MCRPG] Loading server plugin MCRPG v0.0.1
+[21:33:30] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.9.1-SNAPSHOT-659;c93ec87
+[21:33:30] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@45f4e35d]
+[21:33:30] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[21:33:30] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.9.1-SNAPSHOT-659;c93ec87
+[21:33:30] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
+[21:33:30] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
+[21:33:30] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[21:33:31] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[21:33:31] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v1_20_R3.PaperweightFaweAdapter as the Bukkit adapter
+[21:33:31] [Server thread/INFO]: Preparing level "world"
+[21:33:31] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[21:33:32] [ForkJoinPool.commonPool-worker-1/WARN]: [com.fastasyncworldedit.core.util.UpdateNotification] An update for FastAsyncWorldEdit is available. You are 1 build(s) out of date.
+You are running build 659, the latest version is build 660.
+Update at https://www.spigotmc.org/resources/13932/
+[21:33:32] [Server thread/INFO]: Time elapsed: 656 ms
+[21:33:32] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[21:33:32] [Server thread/INFO]: Time elapsed: 13 ms
+[21:33:32] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[21:33:32] [Server thread/INFO]: Time elapsed: 16 ms
+[21:33:32] [Server thread/INFO]: [MCRPG] Enabling MCRPG v0.0.1
+[21:33:32] [Server thread/INFO]: [MCRPG] [ACF] Enabled Asynchronous Tab Completion Support!
+[21:33:32] [Server thread/INFO]: Running delayed init tasks
+[21:33:32] [Server thread/INFO]: [MCRPG] No warps to load.
+[21:33:32] [Server thread/INFO]: Done (2.746s)! For help, type "help"
+[21:33:32] [Server thread/INFO]: Timings Reset
+[21:34:24] [User Authenticator #0/INFO]: UUID of player TheCamZone is e45ae587-1c68-4472-b7e4-19ef204af253
+[21:34:25] [Server thread/INFO]: TheCamZone joined the game
+[21:34:25] [Server thread/INFO]: TheCamZone[/127.0.0.1:55089] logged in with entity id 122 at ([world]-132.5793020093644, 56.67983066541843, -7.8328267203540145)
+[21:35:19] [Craft Scheduler Thread - 7 - MCRPG/INFO]: [MCRPG] [STDOUT] Not a valid portal in Z direction: Block is not air or obsidian
+[21:35:19] [Craft Scheduler Thread - 7 - MCRPG/WARN]: Nag author(s): '[TheCamZone]' of 'MCRPG v0.0.1' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[21:35:33] [Server thread/INFO]: TheCamZone lost connection: Disconnected
+[21:35:33] [Server thread/INFO]: TheCamZone left the game
+[21:35:37] [Server thread/INFO]: Stopping server
+[21:35:37] [Server thread/INFO]: [FastAsyncWorldEdit] Disabling FastAsyncWorldEdit v2.9.1-SNAPSHOT-659;c93ec87
+[21:35:37] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[21:35:37] [Server thread/INFO]: [MCRPG] Disabling MCRPG v0.0.1
+[21:35:37] [Server thread/INFO]: Saving players
+[21:35:37] [Server thread/INFO]: Saving worlds
+[21:35:37] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[21:35:37] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
+[21:35:37] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
+[21:35:37] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
+[21:35:37] [Server thread/INFO]: [ChunkHolderManager] Saved 900 block chunks, 900 entity chunks, 2 poi chunks in world 'world' in 0.37s
+[21:35:37] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[21:35:37] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[21:35:37] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
+[21:35:37] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
+[21:35:37] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
+[21:35:38] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world_nether' in 0.36s
+[21:35:38] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[21:35:38] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
+[21:35:38] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
+[21:35:38] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
+[21:35:38] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
+[21:35:38] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world_the_end' in 0.07s
+[21:35:38] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[21:35:38] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[21:35:38] [Server thread/INFO]: Flushing Chunk IO
+[21:35:38] [Server thread/INFO]: Closing Thread Pool
+[21:35:38] [Server thread/INFO]: Closing Server

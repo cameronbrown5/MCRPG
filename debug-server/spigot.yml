@@ -59,6 +59,7 @@ advancements:
   - minecraft:story/disabled
 world-settings:
   default:
+    seed-trialchambers: 94251327
     below-zero-generation-in-existing-chunks: true
     view-distance: default
     merge-radius:
@@ -172,6 +173,8 @@ world-settings:
     dragon-death-sound-radius: 0
     verbose: false
   worldeditregentempworld:
+    verbose: false
+  faweregentempworld:
     verbose: false
 config-version: 12
 stats:

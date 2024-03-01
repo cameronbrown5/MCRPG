@@ -1,0 +1,15 @@
+portals:
+  test:
+    frame: GLOWSTONE
+    ignition:
+      cause: BLOCK_PLACE
+      type: WATER
+    execution:
+      warmup: 3
+
+      commands:
+        - "teleport player 0 0 0"
+      dimensions:
+        - "world_the_end"
+      messages:
+        - "&aYou teleported!"
