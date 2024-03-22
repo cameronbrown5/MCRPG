@@ -62,6 +62,14 @@
               <pattern>co.aikar.locales</pattern>
               <shadedPattern>me.thecamzone.locales</shadedPattern>
             </relocation>
+            <relocation>
+              <pattern>com.jeff_media.customblockdata</pattern>
+              <shadedPattern>me.thecamzone.customblockdata</shadedPattern>
+            </relocation>
+            <relocation>
+              <pattern>com.jeff_media.morepersistentdatatypes</pattern>
+              <shadedPattern>me.thecamzone.morepersistentdatatypes</shadedPattern>
+            </relocation>
           </relocations>
           <outputFile>${project.basedir}/debug-server/plugins/${project.artifactId}-${project.version}.jar</outputFile>
         </configuration>
@@ -80,6 +88,10 @@
     <repository>
       <id>aikar</id>
       <url>https://repo.aikar.co/content/groups/aikar/</url>
+    </repository>
+    <repository>
+      <id>jeff-media-public</id>
+      <url>https://hub.jeff-media.com/nexus/repository/jeff-media-public/</url>
     </repository>
   </repositories>
   <dependencies>

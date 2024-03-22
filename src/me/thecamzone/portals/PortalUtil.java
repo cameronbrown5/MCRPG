@@ -9,7 +9,7 @@ import java.util.*;
 
 public class PortalUtil {
 
-    private static void getPortalBlocks(int iteration, Block block, Axis axis, List<Block> visited, Set<Block> insideFrame, Set<Block> frame, boolean isFirst) {
+    private static void getPortalBlocks(int iteration, Block block, Axis axis, List<Block> visited, Set<Location> insideFrame, Set<Block> frame, boolean isFirst) {
         if(iteration >= 2000) {
             throw new RuntimeException("Portal is too big.");
         }
@@ -56,7 +56,7 @@ public class PortalUtil {
                 continue;
             }
 
-            insideFrame.add(nearbyBlock);
+            insideFrame.add(nearbyBlock.getLocation());
 
             visited.add(nearbyBlock);
 
@@ -68,12 +68,12 @@ public class PortalUtil {
     public static void createPortal(Block block, Axis axis, boolean debug, boolean isFirst) {
         Bukkit.getScheduler().runTaskAsynchronously(MCRPG.plugin, () -> {
             for(Portal portal : PortalHandler.getPortals().values()) {
-                if(portal.getInsideBlocks().contains(block)) {
+                if(portal.getInsideLocations().contains(block)) {
                     return;
                 }
             }
 
-            Set<Block> insideBlocks = new HashSet<>();
+            Set<Location> insideLocations = new HashSet<>();
             Set<Block> frameBlocks = new HashSet<>();
 
             try {
@@ -82,7 +82,7 @@ public class PortalUtil {
                         block,
                         axis,
                         new ArrayList<>(),
-                        insideBlocks,
+                        insideLocations,
                         frameBlocks,
                         true
                 );
@@ -95,14 +95,14 @@ public class PortalUtil {
                 return;
             }
 
-            if(insideBlocks.isEmpty() || frameBlocks.isEmpty()) {
+            if(insideLocations.isEmpty() || frameBlocks.isEmpty()) {
                 if(isFirst) {
                     createPortal(block, DirectionUtil.oppositeAxis(axis), debug, false);
                 }
                 return;
             }
 
-            Portal portal = new Portal(axis, insideBlocks, frameBlocks);
+            Portal portal = new Portal(axis, insideLocations, frameBlocks);
 
             Bukkit.getScheduler().runTaskLater(MCRPG.plugin, () -> {
                 PortalHandler.addPortal(portal.getUuid(), portal);

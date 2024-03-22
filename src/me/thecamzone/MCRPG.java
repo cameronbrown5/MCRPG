@@ -1,6 +1,7 @@
 package me.thecamzone;
 
 import co.aikar.commands.PaperCommandManager;
+import com.jeff_media.customblockdata.CustomBlockData;
 import me.thecamzone.commands.MCRPGCommand;
 import me.thecamzone.events.*;
 import me.thecamzone.utilities.files.DataFile;
@@ -29,6 +30,8 @@ public class MCRPG extends JavaPlugin {
 		loadFiles();
 		
 		loadAfterWorlds();
+
+		CustomBlockData.registerListener(this);
 	}
 	
 	@Override

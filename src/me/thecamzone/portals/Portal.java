@@ -1,13 +1,14 @@
 package me.thecamzone.portals;
 
-import org.bukkit.Axis;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.World;
+import com.jeff_media.customblockdata.CustomBlockData;
+import com.jeff_media.morepersistentdatatypes.DataType;
+import me.thecamzone.MCRPG;
+import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.entity.BlockDisplay;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
+import org.bukkit.persistence.PersistentDataContainer;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -17,14 +18,14 @@ public class Portal {
 
     private final UUID uuid;
     private final Axis axis;
-    private final Set<Block> insideBlocks;
+    private final Set<Location> insideLocations;
     private final Set<Block> frameBlocks;
     private final Set<Entity> portalEntities;
 
-    public Portal(Axis axis, Set<Block> insideBlocks, Set<Block> frameBlocks) {
+    public Portal(Axis axis, Set<Location> insideBlocks, Set<Block> frameBlocks) {
         this.axis = axis;
         this.uuid = UUID.randomUUID();
-        this.insideBlocks = insideBlocks;
+        this.insideLocations = insideBlocks;
         this.frameBlocks = frameBlocks;
         this.portalEntities = new HashSet<>();
     }
@@ -33,8 +34,8 @@ public class Portal {
         return uuid;
     }
 
-    public Set<Block> getInsideBlocks() {
-        return new HashSet<>(insideBlocks);
+    public Set<Location> getInsideLocations() {
+        return new HashSet<>(insideLocations);
     }
 
     public Set<Block> getFrameBlocks() {
@@ -54,8 +55,8 @@ public class Portal {
     }
 
     public void ignite() {
-        for(Block b : insideBlocks) {
-            Location location = b.getLocation();
+        for(Location location : insideLocations) {
+            Block b = location.getBlock();
 
             if(axis == Axis.Z) {
                 location = location.add(0, 0, 0.999);
@@ -72,11 +73,23 @@ public class Portal {
             }
 
             portalEntities.add(display);
+
+
         }
+
+        save();
     }
 
     public void save() {
+        for(Block block : frameBlocks) {
+            PersistentDataContainer customBlockData = new CustomBlockData(block, MCRPG.plugin);
 
+            customBlockData.set(
+                    new NamespacedKey(MCRPG.plugin, uuid.toString()),
+                    DataType.LOCATION_ARRAY,
+                    insideLocations.toArray(new Location[0])
+            );
+        }
     }
 
 
